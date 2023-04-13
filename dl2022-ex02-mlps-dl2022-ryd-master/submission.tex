@@ -1,0 +1,95 @@
+\documentclass[addpoints]{exam}
+\pagestyle{headandfoot}
+\usepackage{amsmath, amsfonts}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage[scr=rsfs]{mathalpha}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\newcommand{\semester}{WS 2020/2021}
+\runningheader{\students}{Submission}{\semester}
+\runningfooter{}{\thepage}{}
+\headrule
+\footrule
+
+% ---------- Modify team name, students, exercise number here ----------
+\newcommand{\teamname}{dl2022-ryd}
+\newcommand{\students}{Yumna Ali, Deepu K Reddy, Rean Fernandes}
+\newcommand{\assignmentnumber}{2}
+% ---------- End Modify ----------
+
+\title{Submission for Deep Learning Exercise \assignmentnumber}
+\author{Team: \teamname\\Students: \students}
+\date{\today}
+
+\begin{document}
+    \maketitle
+
+    % ---------- Add Solution below here ----------
+
+    \section{Pen and Paper MLP}
+	\begin{equation}
+			z^{(1)} = (W^{(1)})^T\cdot X + b^{(1)} \\
+	= \begin{bmatrix}
+				-2 &2 &-3  \\
+				1& 0 &1 
+			\end{bmatrix} \cdot\begin{bmatrix}
+				1 &3  \\
+				2& 4 \\
+				3& 5
+			\end{bmatrix} + \begin{bmatrix}
+				3 &3  \\
+				0& 0
+			\end{bmatrix}\\
+		= \begin{bmatrix}
+			-4 &-10  \\
+			4 &8 
+		\end{bmatrix}
+	\end{equation}
+\begin{equation}
+	h^{(1)} = g^{1}(z^{(1)}) \\
+	= ReLU(z^{(1)})  = ReLU(\begin{bmatrix}
+		-4 &-10  \\
+		4 &8 
+	\end{bmatrix}) = \begin{bmatrix}
+	0&0 \\
+	4 &8 
+\end{bmatrix}
+\end{equation}
+\begin{equation}
+	z^{(2)} = (W^{(2)})^{T}\cdot 	h^{(1)} +b^{(2)} = \begin{bmatrix}
+		-1 &1 
+	\end{bmatrix} \cdot \begin{bmatrix}
+	0 & 0 \\
+	4 & 8
+\end{bmatrix} + \begin{bmatrix}
+-3 & -3 
+\end{bmatrix} = \begin{bmatrix}
+1 & 5 
+\end{bmatrix}
+\end{equation}
+\begin{equation}
+	h^{(2)} = g^{(2)}(z^{(2)}) = Sigmoid(\begin{bmatrix}
+		1 & 5 
+	\end{bmatrix}) = \begin{bmatrix}
+	0.73105858 &  0.99330715
+	
+\end{bmatrix}
+\end{equation}
+
+The Cross Entropy loss is given by 
+\begin{equation}
+	\mathscr{L}(\hat{y},y) = \frac{1}{N} \Sigma_{i=1}^{2}((-y_{i}\log(\hat{y}_{i}) - (1-{y}_{i})\log(1-\hat{y}_{i}))
+\end{equation}
+\begin{equation}
+	= \frac{1}{2} (-1\cdot \log( 0.99330715) - (1-0)\cdot \log(1-	0.73105858)) = \frac{1}{2} (0.006715+-1.313261) = 0.65998
+\end{equation}
+    
+
+  \section{Experiments}
+  The maximum accuracy we can get with logistic regression is 50\%.
+
+    % ---------- End of Document ----------
+
+\end{document}

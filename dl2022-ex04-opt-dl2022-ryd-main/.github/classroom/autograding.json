@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "Test Adam Optimizer",
+      "setup": "",
+      "run": "python -m pytest tests/test_adam_optimizer.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test CosineAnnealingLR",
+      "setup": "",
+      "run": "python -m pytest tests/test_cosine_scheduler.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test PiecewiseConstantLR",
+      "setup": "",
+      "run": "python -m pytest tests/test_piecewise_scheduler.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test Model Training",
+      "setup": "",
+      "run": "python -m pytest tests/test_train_model.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test Code-Style",
+      "setup": "",
+      "run": "pycodestyle --max-line-length 120 .",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
